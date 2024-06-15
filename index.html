@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Luka Brinar Home Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script type="text/javascript">
+			
+			// https://dashboard.emailjs.com/admin
+			
+			(function() {
+				emailjs.init({
+					publicKey: 'wyV9ottzcj04CDIDG',
+					// Do not allow headless browsers
+					blockHeadless: true,
+					blockList: {
+						// Block the suspended emails
+						list: ['foo@emailjs.com', 'bar@emailjs.com'],
+						// The variable contains the email address
+						watchVariable: 'userEmail',
+					},
+					limitRate: {
+						// Set the limit rate for the application
+						id: 'app',
+						// Allow 1 request per 10s
+						throttle: 10000,
+					},
+				});
+			})();
+		</script>
+		<script type="text/javascript">
+			window.onload = function() {
+				const btn = document.getElementById('submit-button');
+
+				document.getElementById('contact-form')
+					.addEventListener('submit', function(event) {
+						event.preventDefault();
+
+						btn.value = 'Sending...';
+
+						const serviceID = 'default_service';
+						const templateID = 'template_m98ld2i';
+
+						emailjs.sendForm(serviceID, templateID, this)
+							.then(() => {
+								btn.value = 'Send Email';
+								alert('Sent!');
+							}, (err) => {
+								btn.value = 'Send Email';
+								alert(JSON.stringify(err));
+							});
+					});
+			}
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/lb.jpg" alt="Luka Brinar" /></a>
+					<h1><strong>I am Luka Brinar</strong>, front-end developer with more than 5 years of experience.<br /><br /></h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>About</h2>
+						</header>
+						<p>
+							The contrasting combo of fresh mind and ancient soul. 
+							Ready to kick some asses on a whole new business level. 
+							With lots of expectations and energy to contribute to the further enhancement of your business. 
+							Looking forward to completing amazing projects in great teams and learning from the best.
+						</p>
+						<ul class="actions">
+							<li><a href="https://github.com/luckie86" class="button" target="_blank">Learn more about my projects</a></li>
+						</ul>
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>Experience</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.linkedin.com/company/adin-digitalsignage/posts/?feedView=all" class="image fit thumb"><img src="images/adin_digitalsignage_logo.jpeg" alt="Adin digital signage" /></a>
+								<h3>Company: Adin d.o.o.</h3>
+								<p>Role: Quality Assurance and Testing</p>
+								<p>Time: 7 months</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.linkedin.com/company/d.labs/posts/?feedView=all" class="image fit thumb"><img src="images/dlabs_logo.jpeg" alt="dlabs" /></a>
+								<h3>Company: dlabs</h3>
+								<p>Role: Junior Web Developer</p>
+								<p>Time: 1 year 7 months</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.linkedin.com/company/geneplanet/posts/?feedView=all" class="image fit thumb"><img src="images/geneplanet_logo.jpeg" alt="GenePlanet" /></a>
+								<h3>Company: GenePlanet</h3>
+								<p>Role: Frontend Developer</p>
+								<p>Time: 4 months</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.linkedin.com/company/bettercareit/posts/?feedView=all" class="image fit thumb"><img src="images/bettercareit_logo.jpeg" alt="better" /></a>
+								<h3>Company: Better</h3>
+								<p>Role: Junior Software Developer</p>
+								<p>Time: 1 year 7 months</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.linkedin.com/company/dhimahi/" class="image fit thumb"><img src="images/dhimahi_logo.jpeg" alt="Dhimahi" /></a>
+								<h3>Company: Dhimahi</h3>
+								<p>Role: Software Developer</p>
+								<p>Time: 1 year 7 months</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="https://www.linkedin.com/company/zavarovalnica-triglav/" class="image fit thumb"><img src="images/zavarovalnica_triglav_logo.jpeg" alt="Zavarovalnica Triglav" /></a>
+								<h3>Company: Triglav d.d.</h3>
+								<p>Role: Software Developer</p>
+								<p>Time: Current employment</p>
+							</article>
+						</div>
+						<ul class="actions">
+							<li><a href="#two" class="button">Full Portfolio</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Get In Touch</h2>
+						<div class="row">
+							<div class="col-8 col-12-small">
+								<form id="contact-form">
+									<div class="row gtr-uniform gtr-50">
+										<div class="col-6 col-12-xsmall"><input type="text" name="from_name" id="name" placeholder="Name" /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" name="reply_to" id="email" placeholder="Email" /></div>
+										<div class="col-12"><textarea name="message" id="message" placeholder="Your message" rows="4"></textarea></div>
+										<ul class="actions">
+											<li><input id="submit-button"  type="submit" value="Send Message" /></li>
+										</ul>
+									</div>
+								</form>
+							</div>
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<!-- <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<a href="mailto: luckie.luke@hotmail.com">luckie.luke@hotmail.com</a> -->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/luckie86" class="icon brands fa-github" target="_blank"><span class="label">Github</span></a></li>
+						<li><a href="https://www.instagram.com/luckieluke86/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="https://www.facebook.com/luka.brinar" class="icon brands fa-facebook-f" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto: luckie.luke@hotmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Luka Brinar 2024</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
