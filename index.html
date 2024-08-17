@@ -174,10 +174,14 @@
 						<li><a href="mailto: luckie.luke@hotmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Luka Brinar 2024</li>
+						<li>&copy; Luka Brinar <span id="year"></span></li>
 					</ul>
 				</div>
 			</footer>
+
+			<script>
+				document.getElementById("year").innerHTML = new Date().getFullYear();
+			</script>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
